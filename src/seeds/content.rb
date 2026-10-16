@@ -46,11 +46,13 @@ module App::Seeds
         ],
         legal: [
           { label: 'Privacy', to: '/privacy' }
-        ]
+        ],
+        # Phone/tablet bottom tab bar: Home, these sections, then "More" for everything else
+        mobile: { home: 'Home', more: 'More', explore: 'Explore', all: 'View all', tabs: ['/capabilities', '/solutions', '/work'] }
       },
 
       ctas: {
-        global: { primary: { label: 'Discuss Your Transformation', to: '/contact' }, secondary: { label: 'Explore Our Work', to: '/work' } },
+        global: { primary: { label: 'Discuss Your Transformation', shortLabel: "Let's Talk", to: '/contact' }, secondary: { label: 'Explore Our Work', to: '/work' } },
         workflow: { primary: { label: 'Assess an Automation Opportunity', to: '/contact?interest=automation' }, secondary: { label: 'See Workflow Use Cases', to: '/solutions' } },
         ai: { primary: { label: 'Explore an AI Use Case', to: '/contact?interest=ai' }, secondary: { label: 'See Applied AI Capabilities', to: CAPABILITY.('ai-intelligent-systems') } },
         modernization: { primary: { label: 'Discuss a Modernization Plan', to: '/contact?interest=modernization' }, secondary: { label: 'View Engineering Approach', to: '/security' } },
