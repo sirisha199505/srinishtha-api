@@ -65,7 +65,12 @@ class App::Services::Base
   rescue => e
     App.logger.error(e.message)
     App.logger.error(e.backtrace)
-    return_errors!(e.message, 400)
+    return_errors!(safe_message(e), 400)
+  end
+
+  # Internal exception text (SQL, stack details) is only shown in development.
+  def safe_message(e)
+    App.development? ? e.message : 'The request could not be completed.'
   end
 
   def check_presence!(*flds)
@@ -121,7 +126,7 @@ class App::Services::Base
   rescue => e
     App.logger.error(e.message)
     App.logger.error(e.backtrace)
-    return_errors!(e.message, 400)
+    return_errors!(safe_message(e), 400)
   end
 
   def remove
@@ -131,7 +136,7 @@ class App::Services::Base
 
   def item(id=rp[:id])
     @item ||= begin
-      model[id] || return_errors!("No #{model.class} found with id: #{id}", 404)
+      model[id] || return_errors!('Not found', 404)
     end
   end
 

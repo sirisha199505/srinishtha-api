@@ -83,7 +83,9 @@ class App::Routes < Roda
       rescue => e
         App.logger.error("API Error: #{e.message}")
         App.logger.error(e.backtrace)
-        { status: 'error', message: "An error occurred: #{e.message}" }
+        # Never expose internal error details outside development
+        r.response.status = 500
+        { status: 'error', data: App.development? ? e.message : 'Something went wrong. Please try again.' }
       end
     end
 

@@ -37,78 +37,62 @@ class App::Services::Users < App::Services::Base
     )
   end
 
+  MIN_PASSWORD_LENGTH = 12
+
   def update_password
-    
-    if App.cu.user_obj.password == params[:current_password]
-      u = App.cu.user_obj
-      u.password = params[:new_password]
-      save(u) do |u|
-        return_success("successfully updated password!!")
-      end
-    else
-      return_errors!("Invalid password!!")
-    end
+    user = App.cu.user_obj
+    return_errors!('Current password is incorrect.') unless user.password == params[:current_password]
+    check_password_strength!(params[:new_password])
+
+    user.password = params[:new_password]
+    user.current_session_id = nil # sign out other sessions
+    save(user) { return_success('Password updated. Please sign in again.') }
   end
 
+  # Always answers the same way, so the response never reveals whether an account exists.
   def forgot_password
-    email = params[:email]
-    if email.present?
-      user = App::Models::User.where(email: email).first
-      if user
-        user.send_password_reset_email('https://vhrr.net')
-        return_success("Password reset email sent to #{user.email}")
-      else
-        return_errors("User not found with email: #{email}", 404)
-      end
-    else
-      return_errors("User email is required!", 400)
+    email = params[:email].to_s.strip.downcase
+    user = App::Models::User.where(email: email, active: true).first if email.present?
+    begin
+      user&.send_password_reset_email(App::Services::Seo.site_url)
+    rescue => e
+      App.logger.error("Password reset email failed: #{e.message}")
     end
+    return_success('If that email belongs to an account, a reset link is on its way.')
   end
-
 
   def validate_password_token
-    token = params['token']
-    
-    if token.nil? || token.empty?
-      return_errors!('Token is missing.', 400)
-    else
-      user = App::Models::User.where(reset_token: token).first
-      if user && token_valid?(user)
-        return_success('Token is valid.')
-      else
-        return_errors!('Invalid or expired token.')
-      end
-    end
-  end
-
-  def token_valid?(user)
-    return false if user.reset_sent_at.nil?
-  
-    token_age = Time.now - user.reset_sent_at
-    token_age < RESET_TOKEN_EXPIRATION_TIME
+    user = user_for_token(params['token'])
+    user ? return_success('Token is valid.') : return_errors!('Invalid or expired link.')
   end
 
   def reset_password
-    token = params['token']
-    new_password = params['password']
+    user = user_for_token(params['token']) || return_errors!('Invalid or expired link.')
+    check_password_strength!(params['password'])
 
-    if token.nil? || new_password.nil?
-      return_errors!('Token and new password are required.', 400)
-    else
-      user = App::Models::User.where(reset_token: token).first
-      if user && token_valid?(user)
-        # Update the user's password and clear the reset token
-        user.update(
-          password: new_password,  # Use your password hashing logic here
-          reset_token: nil,
-          reset_sent_at: nil
-        )
-        return_success('Password has been reset.')
-      else
-        return_errors!('Invalid or expired token.', 400)
-      end
-    end
+    user.password = params['password']
+    user.reset_token = nil
+    user.reset_sent_at = nil
+    user.current_session_id = nil # sign out existing sessions
+    save(user) { return_success('Password has been reset. Please sign in.') }
   end
+
+  private
+
+  def user_for_token(token)
+    return nil if token.blank?
+
+    user = App::Models::User.where(reset_token: token.to_s, active: true).first
+    user if user&.reset_sent_at && (Time.now - user.reset_sent_at) < RESET_TOKEN_EXPIRATION_TIME
+  end
+
+  def check_password_strength!(password)
+    return if password.to_s.length >= MIN_PASSWORD_LENGTH
+
+    return_errors!("Password must be at least #{MIN_PASSWORD_LENGTH} characters.")
+  end
+
+  public
 
   def load_rgms
     return_success(

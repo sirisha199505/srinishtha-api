@@ -1,3 +1,11 @@
 **/.DS_Store
 **/.byebug_history
 ./older
+.git
+.env
+.env.*
+!.env.example
+log/
+tmp/
+uploads/*
+!uploads/.gitkeep
