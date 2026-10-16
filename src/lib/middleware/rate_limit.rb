@@ -20,7 +20,7 @@ module Middleware
       rule = RULES[[env['REQUEST_METHOD'], env['PATH_INFO'].chomp('/')]]
       return @app.call(env) unless rule
 
-      key = "#{Rack::Request.new(env).ip}|#{env['PATH_INFO']}"
+      key = "#{client_ip(env)}|#{env['PATH_INFO']}"
       retry_after = throttle(key, rule)
       return too_many(retry_after) if retry_after
 
@@ -28,6 +28,12 @@ module Middleware
     end
 
     private
+
+    # Behind Vercel's rewrite proxy, Vercel puts the visitor's IP first in X-Forwarded-For.
+    def client_ip(env)
+      env['HTTP_X_FORWARDED_FOR'].to_s.split(',').first&.strip.presence || Rack::Request.new(env).ip
+    end
+
 
     def throttle(key, rule)
       now = Time.now.to_f
