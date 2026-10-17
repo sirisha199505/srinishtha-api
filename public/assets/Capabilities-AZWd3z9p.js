@@ -1,1 +1,0 @@
-import{u as t,a as e,j as a,S as r,C as n,b as o}from"./index-DfkxsPAG.js";import{P as c}from"./PageHeader-GM_pfMjn.js";function x(){const s=t(),i=e("capabilities");return a.jsxs(a.Fragment,{children:[a.jsx(c,{...i}),a.jsx(r,{children:a.jsx(n,{capabilities:s.capabilities})}),a.jsx(o,{})]})}export{x as default};

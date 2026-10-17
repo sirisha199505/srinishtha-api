@@ -91,7 +91,7 @@ module App::Seeds
 
       clients: [
         { name: "Sid's Farm", logo: '/images/sidsfarm.webp' },
-        { name: 'Comfort Cool Systems' },
+        { name: 'Comfort Cool Systems', bg: '#0b3d7a' },
         { name: 'Tenju Tofu', logo: '/images/tenjutofu_logo.png' },
         { name: 'Kouno Dolls', logo: '/images/kouno_logo.png' },
         { name: 'Shankara Mutt, Tirupati', logo: '/images/hamsa-white.webp', dark: true },
@@ -666,6 +666,7 @@ module App::Seeds
         title: 'Our products',
         lede: 'Srinishtha Labs is where we turn lessons from client work into products of our own, built on the same framework we use for clients.',
         items: [
+          { name: 'Reconnect Fly', tagline: "India's first school, college and career network", status: 'New · Live on Google Play', logo: '/images/reconnectfly_logo.png', screenshot: '/images/reconnectfly_ss.webp', text: 'One platform for every stage of life. Join school, college and alumni communities, reconnect with classmates, discover career opportunities, get AI-powered career guidance and create a digital Slam Book.' },
           { name: 'Adhyaapak', tagline: 'The professional network for educators', status: 'Live', logo: '/images/aadhyapak_logo.png', screenshot: '/images/aadhyapak_ss.webp', text: 'A dedicated professional networking platform for teachers, build profiles, share achievements, discover opportunities, connect with schools and grow a career in education.' },
           { name: 'Fine Arts Platform', tagline: 'Showcase your art. Build your brand.', status: 'In development', screenshot: '/images/finearts_ss.webp', text: 'A premium platform celebrating the fine arts, connecting artists, enthusiasts and institutions in a beautifully crafted digital space.' },
           { name: 'EduERP', tagline: 'The school ERP people actually use', status: 'In development', screenshot: '/images/cs5.jpg', device: 'photo', caseStudy: 'education-erp', text: 'A human-centred, mobile-first, multilingual school ERP with role-specific views for teachers, parents, drivers and administrators.' },
@@ -784,7 +785,7 @@ module App::Seeds
         solutions: { title: 'Solutions', description: 'Solutions for operations automation, enterprise portals, education, commerce, AI assistants and document workflows.', eyebrow: 'Solutions', heading: 'Solutions by business problem', lede: 'Each solution combines modules from the Srinishtha Technology Framework with engineering tailored to your operation.' },
         industries: { title: 'Industries', description: 'Industry experience across agriculture & dairy, retail & commerce, education, institutions, professional services and financial services.', eyebrow: 'Industries', heading: 'Industries we serve', lede: 'The sectors where we have delivered platforms, and the operational problems we usually help with in each.' },
         work: { title: 'Work', description: "Case studies from Sid's Farm, Tirupati Shankara Mutt, Kouno Dolls and more.", eyebrow: 'Selected work', heading: 'Selected work', lede: 'Detailed case studies first, followed by an archive of other platforms we have shipped.' },
-        products: { title: 'Products — Srinishtha Labs', description: 'Adhyaapak, Fine Arts Platform and EduERP from Srinishtha Labs.' },
+        products: { title: 'Products — Srinishtha Labs', description: 'Reconnect Fly, Adhyaapak, Fine Arts Platform, EduERP and more from Srinishtha Labs.' },
         about: { title: 'About', description: 'Founded in 2024, built on more than 100 years of combined technology and business experience.', eyebrow: 'Company', heading: 'About Srinishtha', lede: 'Srinishtha Technologies was founded in Hyderabad in 2024 by a leadership team with more than 100 years of combined experience in telecom, logistics, compliance and enterprise software. We started the company to deliver enterprise-grade engineering to organisations that are usually underserved by large IT firms.' },
         leadership: { title: 'Leadership', description: 'The people who lead Srinishtha Technologies, the enterprise experience behind them, and our team.', eyebrow: 'Company', heading: 'Leadership', lede: 'Senior people who stay hands-on with every engagement, backed by experience from critical enterprise systems.' },
         howWeWork: { title: 'How We Work', description: 'Our delivery model and operating principles.', eyebrow: 'Company', heading: 'How we work', lede: 'A predictable delivery model with senior involvement from the first conversation to long after launch.' },
