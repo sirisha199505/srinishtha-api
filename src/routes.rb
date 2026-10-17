@@ -91,6 +91,9 @@ class App::Routes < Roda
 
     # Every page of the single-page app, with server-rendered SEO tags (404 for unknown paths)
     r.get do
+      # API-only deployments (Render) send page requests to the public site (Vercel)
+      r.redirect("#{Seo.site_url}#{r.path}", 302) unless Seo.serves_site?
+
       status, html = Seo.page(r.path)
       r.response.status = status
       r.response['Content-Type'] = 'text/html; charset=utf-8'

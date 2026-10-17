@@ -30,12 +30,8 @@ Attach a Render Disk at `/app/uploads` (paid) or move uploads to S3 before relyi
 
 ## Frontend build (`public/`)
 
-`public/` is the built React app from the `srinishtha` repo. After frontend changes:
-
-```bash
-cd ../frontend && npm run build   # writes to ../backend/public
-cd ../backend && git add public && git commit -m "Update frontend build"
-```
+`public/` is the built React app, written there by `npm run build` in the frontend repo for local use.
+It is git-ignored: in production the site is served by Vercel, and this API redirects page requests to `SITE_URL`.
 
 ## Security
 

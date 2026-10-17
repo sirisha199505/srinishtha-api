@@ -18,3 +18,6 @@ tmp/
 # Admin uploads (keep the folder, not the files)
 uploads/*
 !uploads/.gitkeep
+
+# Built frontend (deployed on Vercel; rebuilt locally by `npm run build` in frontend/)
+public/

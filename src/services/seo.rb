@@ -32,6 +32,15 @@ class App::Services::Seo
     App::Models::ContentBlock.where(active: true).all.to_h { |b| [b.key, b.plain_payload] }
   end
 
+  def self.index_path
+    File.join(App.root, 'public', 'index.html')
+  end
+
+  # True when this server has the built site (local); on Render the site lives on Vercel.
+  def self.serves_site?
+    File.file?(index_path)
+  end
+
   # → [status, html]
   def self.page(path)
     path = path.chomp('/') if path.length > 1
@@ -76,7 +85,7 @@ class App::Services::Seo
   end
 
   def self.render(meta, site)
-    html = File.read(File.join(App.root, 'public', 'index.html'))
+    html = File.read(index_path)
     url = "#{site_url}#{meta[:path] == '/' ? '/' : meta[:path]}"
     image = "#{site_url}#{meta[:image] || '/images/office-space.jpeg'}"
     e = ->(v) { CGI.escapeHTML(v.to_s) }

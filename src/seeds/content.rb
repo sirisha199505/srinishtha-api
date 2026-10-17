@@ -79,6 +79,7 @@ module App::Seeds
         capabilities: { eyebrow: 'Capabilities', title: 'Four capabilities, one engineering foundation.', lede: 'Each is delivered by a senior team using the same reusable modules, so quality and speed stay consistent from project to project.', link: { label: 'All capabilities', to: '/capabilities' } },
         work: { eyebrow: 'Selected work', title: 'Platforms we have engineered.', link: { label: 'All case studies', to: '/work' } },
         ai: { link: { label: 'Applied AI', to: '/capabilities/ai-intelligent-systems' } },
+        products: { eyebrow: 'Srinishtha Labs', title: 'Our newest product', link: { label: 'All products', to: '/products' } },
         industries: { eyebrow: 'Industries', title: 'Sector experience, organised by problem.', link: { label: 'All industries', to: '/industries' } }
       },
 
