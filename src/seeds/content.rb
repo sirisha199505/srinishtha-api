@@ -706,7 +706,7 @@ module App::Seeds
           { title: 'New Year', image: '/images/new_year.jpeg' }
         ],
         voices: [
-          { author: 'Sirisha', role: 'UI/UX Expert & Full Stack Java Developer', quote: 'The team is warm, professional, and always there when you need help. Truly a great place to build yourself.' },
+          { author: 'Sirisha', role: 'UI/UX Expert & Full Stack Java Developer', quote: 'Working directly with clients and testing our applications has taught me more than I ever expected. Understanding what users really need has made design and development feel easier and more natural. Every day brings something new to learn, and with a supportive team always beside me, I have grown so much, both technically and professionally.' },
           { author: 'Preethi', role: 'Team Lead & Database Expert', quote: 'Leading this team has taught me as much as it has taught them. Everyone takes ownership, and our clients can feel that in the work.' },
           { author: 'Vaishnavi', role: 'Full Stack Java Developer & SEO Specialist', quote: 'I get to work on the whole product, from the database to how it shows up in search. Every week I learn something new.' },
           { author: 'Shri Harshie', role: 'Full Stack Java Developer & Testing Team', quote: 'My first real work experience. Positive, helpful, and no one makes you feel small for asking questions. My opinions mattered here.' },
