@@ -641,12 +641,11 @@ module App::Seeds
       },
 
       team: [
-        { name: 'Sirisha', role: 'Full Stack Developer', photo: '/images/sirisha.jpeg' },
-        { name: 'Preethi', role: 'Full Stack Developer', photo: '/images/preethi.jpeg' },
-        { name: 'Vaishnavi', role: 'Full Stack Developer', photo: '/images/vaishnavi.jpeg' },
-        { name: 'Shri Harshie', role: 'Full Stack Developer', photo: '/images/harshie.jpeg' },
-        { name: 'Jhansi', role: 'Full Stack Developer', photo: '/images/jhansi.jpeg' },
-        { name: 'Surya Sravani', role: 'Full Stack Developer', photo: '/images/sravani.jpeg' }
+        { name: 'Sirisha', role: 'UI/UX Expert & Full Stack Java Developer', bio: 'Designs experiences people enjoy using, then builds them end to end in Java. Thinks like a user, always sketching a better way.' },
+        { name: 'Preethi', role: 'Team Lead & Database Expert', bio: 'Leads the team day to day and keeps every project on track. Designs the data behind our products so it stays fast, reliable and ready to scale.' },
+        { name: 'Vaishnavi', role: 'Full Stack Java Developer & SEO Specialist', bio: 'Builds features from database to screen, and makes sure people can find them. Curious by nature, always looking for ways to rank and work better.' },
+        { name: 'Shri Harshie', role: 'Full Stack Java Developer & Testing Team', bio: 'Builds Java features and tests them thoroughly before they reach users. Detail-focused and dependable, quietly raising the bar for quality.' },
+        { name: 'Sravani', role: 'Full Stack Java Developer & Testing Team', bio: 'Develops across the stack and puts every release through careful testing. A steady team player who enjoys finding and fixing tricky problems.' }
       ],
 
       principles: [
@@ -773,7 +772,7 @@ module App::Seeds
           securityLink: { label: 'Security & engineering practice', to: '/security' }
         },
         industries: { caseStudies: 'Case study' },
-        about: { principles: 'Operating principles', principlesTitle: 'What you can expect from us', leadership: 'Leadership', leadershipTitle: 'The people accountable for your project', team: 'The builders', teamTitle: 'Our Team', timeline: 'Our story', timelineTitle: 'From first project to products', clients: 'Clients', clientsTitle: 'Organisations we work with' },
+        about: { principles: 'Operating principles', principlesTitle: 'What you can expect from us', leadership: 'Leadership', leadershipTitle: 'The people accountable for your project', team: 'The builders', teamTitle: 'Our Team', teamLede: 'A team of full stack Java developers who build every layer of what we deliver, from back-end services, APIs and databases to clean, responsive web front ends. They work alongside our leadership on every client project, from first build through launch and support.', timeline: 'Our story', timelineTitle: 'From first project to products', clients: 'Clients', clientsTitle: 'Organisations we work with' },
         careers: { perks: 'Why join us', perksTitle: 'What working here is like', roles: 'Open roles', rolesTitle: 'We are always hiring for', rolesLede: 'No opening that fits? Send your resume anyway and we will reach out when something matches.', process: 'Hiring process', processTitle: 'Four steps, no surprises', life: 'Life at Srinishtha', lifeTitle: 'The office and the people', voices: 'In their words' },
         contact: { reach: 'Reach us directly', email: 'Email', phone: 'Phone', office: 'Office' },
         products: { caseStudy: 'Read the story' },
