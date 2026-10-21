@@ -706,8 +706,14 @@ module App::Seeds
           { title: 'New Year', image: '/images/new_year.jpeg' }
         ],
         voices: [
-          { author: 'Sirisha', role: 'Full Stack Developer', photo: '/images/sirisha.jpeg', quote: 'The team is warm, professional, and always there when you need help. Truly a great place to build yourself.' },
-          { author: 'Shri Harshie', role: 'Intern', photo: '/images/harshie.jpeg', quote: 'My first real work experience. Positive, helpful, and no one makes you feel small for asking questions. My opinions mattered here.' }
+          { author: 'Sirisha', role: 'UI/UX Expert & Full Stack Java Developer', quote: 'The team is warm, professional, and always there when you need help. Truly a great place to build yourself.' },
+          { author: 'Preethi', role: 'Team Lead & Database Expert', quote: 'Leading this team has taught me as much as it has taught them. Everyone takes ownership, and our clients can feel that in the work.' },
+          { author: 'Vaishnavi', role: 'Full Stack Java Developer & SEO Specialist', quote: 'I get to work on the whole product, from the database to how it shows up in search. Every week I learn something new.' },
+          { author: 'Shri Harshie', role: 'Full Stack Java Developer & Testing Team', quote: 'My first real work experience. Positive, helpful, and no one makes you feel small for asking questions. My opinions mattered here.' },
+          { author: 'Surya Sravani', role: 'Full Stack Java Developer & Testing Team', quote: 'Testing what we build has made me a better developer. The team cares about quality, and it shows in every release.' },
+          { author: 'Jhansi', role: 'Full Stack Java Developer & Client Support', quote: 'Working closely with clients shows me how much our work matters to them. The team always backs you up when things get busy.' },
+          { author: 'Dharma Teja', role: 'Intern', quote: 'As an intern I was trusted with real work from day one. The guidance here has helped me grow faster than I expected.' },
+          { author: 'Manikanta', role: 'Full Stack Java Developer', quote: 'Every project here brings a new challenge, and the team makes sure you never face it alone. It is a place where you keep growing.' }
         ]
       },
 
@@ -774,7 +780,7 @@ module App::Seeds
         },
         industries: { caseStudies: 'Case study' },
         about: { principles: 'Operating principles', principlesTitle: 'What you can expect from us', leadership: 'Leadership', leadershipTitle: 'The people accountable for your project', team: 'The builders', teamTitle: 'Our Team', teamLede: 'A team of full stack Java developers who build every layer of what we deliver, from back-end services, APIs and databases to clean, responsive web front ends. They work alongside our leadership on every client project, from first build through launch and support.', timeline: 'Our story', timelineTitle: 'From first project to products', clients: 'Clients', clientsTitle: 'Organisations we work with' },
-        careers: { perks: 'Why join us', perksTitle: 'What working here is like', roles: 'Open roles', rolesTitle: 'We are always hiring for', rolesLede: 'No opening that fits? Send your resume anyway and we will reach out when something matches.', process: 'Hiring process', processTitle: 'Four steps, no surprises', life: 'Life at Srinishtha', lifeTitle: 'The office and the people', voices: 'In their words' },
+        careers: { perks: 'Why join us', perksTitle: 'What working here is like', roles: 'Open roles', rolesTitle: 'We are always hiring for', rolesLede: 'No opening that fits? Send your resume anyway and we will reach out when something matches.', process: 'Hiring process', processTitle: 'Four steps, no surprises', life: 'Life at Srinishtha', lifeTitle: 'The office and the people', voices: 'In their words', voicesEyebrow: 'Our people', voicesLede: 'The best way to know what it is like to work here is to hear it from the team. Here is what our developers, testers and interns say about building their careers at Srinishtha.' },
         contact: { reach: 'Reach us directly', email: 'Email', phone: 'Phone', office: 'Office' },
         products: { caseStudy: 'Read the story' },
         notFound: { eyebrow: '404', heading: 'This page does not exist.', lede: 'The link may be out of date. These pages are a good place to start:' }
