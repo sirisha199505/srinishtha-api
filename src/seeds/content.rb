@@ -641,12 +641,12 @@ module App::Seeds
       },
 
       team: [
-        { name: 'Sirisha', role: 'UI/UX Expert & Full Stack Java Developer', bio: 'Designs experiences people enjoy using, then builds them end to end in Java. Thinks like a user, always sketching a better way.' },
-        { name: 'Preethi', role: 'Team Lead & Database Expert', bio: 'Leads the team day to day and keeps every project on track. Designs the data behind our products so it stays fast, reliable and ready to scale.' },
+        { name: 'Sirisha', role: 'UI/UX Expert & Full Stack Java Developer', bio: 'Designs experiences people enjoy using and tests key applications to make sure they work as intended. Also supports our clients, turning their feedback into a smoother product.' },
+        { name: 'Preethi', role: 'Team Lead & Database Expert', bio: 'Leads the team day to day and works directly with clients to keep every project on track. Designs the data behind our products so it stays fast, reliable and ready to scale.' },
         { name: 'Vaishnavi', role: 'Full Stack Java Developer & SEO Specialist', bio: 'Builds features from database to screen, and makes sure people can find them. Curious by nature, always looking for ways to rank and work better.' },
         { name: 'Shri Harshie', role: 'Full Stack Java Developer & Testing Team', bio: 'Builds Java features and tests them thoroughly before they reach users. Detail-focused and dependable, quietly raising the bar for quality.' },
         { name: 'Surya Sravani', role: 'Full Stack Java Developer & Testing Team', bio: 'Develops across the stack and puts every release through careful testing. A steady team player who enjoys finding and fixing tricky problems.' },
-        { name: 'Dharma Teja', role: 'Intern', bio: 'Learning the craft by working on real projects alongside the team. Eager, curious and picking up new skills every day.' }
+        { name: 'Jhansi', role: 'Full Stack Java Developer', bio: 'Builds reliable features across the stack, from Java services and APIs to the screens people use. Also supports our clients, helping them get answers quickly and keeping things running smoothly.' }
       ],
 
       principles: [
