@@ -645,7 +645,8 @@ module App::Seeds
         { name: 'Preethi', role: 'Team Lead & Database Expert', bio: 'Leads the team day to day and keeps every project on track. Designs the data behind our products so it stays fast, reliable and ready to scale.' },
         { name: 'Vaishnavi', role: 'Full Stack Java Developer & SEO Specialist', bio: 'Builds features from database to screen, and makes sure people can find them. Curious by nature, always looking for ways to rank and work better.' },
         { name: 'Shri Harshie', role: 'Full Stack Java Developer & Testing Team', bio: 'Builds Java features and tests them thoroughly before they reach users. Detail-focused and dependable, quietly raising the bar for quality.' },
-        { name: 'Sravani', role: 'Full Stack Java Developer & Testing Team', bio: 'Develops across the stack and puts every release through careful testing. A steady team player who enjoys finding and fixing tricky problems.' }
+        { name: 'Surya Sravani', role: 'Full Stack Java Developer & Testing Team', bio: 'Develops across the stack and puts every release through careful testing. A steady team player who enjoys finding and fixing tricky problems.' },
+        { name: 'Dharma Teja', role: 'Intern', bio: 'Learning the craft by working on real projects alongside the team. Eager, curious and picking up new skills every day.' }
       ],
 
       principles: [
