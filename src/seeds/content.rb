@@ -59,7 +59,7 @@ module App::Seeds
         product: { primary: { label: 'Discuss Your Product', to: '/contact?interest=product' }, secondary: { label: 'See Product Work', to: '/products' } },
         enterprise: { primary: { label: 'Discuss Your Platform', to: '/contact?interest=enterprise' }, secondary: { label: 'Explore Our Work', to: '/work' } },
         caseStudy: { primary: { label: 'Discuss a Similar Challenge', to: '/contact' }, secondary: { label: 'Explore More Work', to: '/work' } },
-        careers: { primary: { label: 'Submit Your Resume', href: 'https://forms.gle/mJrUXSBki62U8MM67' }, secondary: { label: 'Life at Srinishtha', to: '/life' } },
+        careers: { primary: { label: 'Submit Your Resume', href: 'https://forms.gle/mJrUXSBki62U8MM67' } },
         final: {
           question: 'Have a system or process that needs work?',
           lede: 'Tell us what you are trying to change. A senior member of our team will respond within one business day.'
